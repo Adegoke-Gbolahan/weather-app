@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
-
+const port = process.env.PORT || 3000
 const forcast = require('./ultis/forecast')
 
 const app = express()
@@ -87,6 +87,6 @@ app.get('*',(req,res)=>{
         title:'404'
     })
 })
-app.listen(3000,()=>{
-    console.log('The server is running on port 3000')
+app.listen(port,()=>{
+    console.log('The server is running on port ' + port)
 })
